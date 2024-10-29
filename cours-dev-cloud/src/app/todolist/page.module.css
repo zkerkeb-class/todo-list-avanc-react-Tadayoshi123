@@ -1,0 +1,72 @@
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--font-geist-sans);
+}
+
+.todoList input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid var(--gray-alpha-200);
+  border-radius: 4px;
+}
+
+.todoList button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.todoList button:hover {
+  background: var(--button-primary-hover);
+  color: var(--background);
+}
+
+.todoList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todoList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid var(--gray-alpha-200);
+}
+
+.todoList li span {
+  cursor: pointer;
+}
+
+.todoList li button {
+  background: var(--button-secondary-hover);
+  color: var(--foreground);
+}
+
+.todoList li button:hover {
+  background: var(--button-primary-hover);
+  color: var(--background);
+}
+
+.todoList .filters {
+  display: flex;
+  gap: 8px;
+}
+
+.todoList .filters button {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.todoList .filters button:hover {
+  background: var(--button-primary-hover);
+  color: var(--background);
+}
