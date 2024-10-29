@@ -4,8 +4,10 @@ import { useTasks } from "@/context/taskContext";
 import styles from "./page.module.css";
 
 export default function TodoList() {
-  const { tasks, addTask, deleteTask, toggleTaskCompletion } = useTasks();
-  const [filter, setFilter] = useState("all");
+  const { tasks, addTask, deleteTask, toggleTaskCompletion, loading, error } =
+    useTasks();
+
+  const [filter, setFilter] = useState<"all" | "completed" | "incomplete">("all");
   const [newTask, setNewTask] = useState("");
 
   const filteredTasks = useMemo(() => {
@@ -17,6 +19,9 @@ export default function TodoList() {
       return tasks;
     }
   }, [tasks, filter]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Failed to load tasks</div>;
 
   const handleAddTask = () => {
     if (newTask.trim()) {
